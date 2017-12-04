@@ -1,2 +1,0 @@
-# BballData
-Basketball Database
