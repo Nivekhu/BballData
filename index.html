@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>
+		Football
+	</title>
+
+	<link rel = "icon" href = "bball.png">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Catamaran:100|Quicksand:300" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript" src = "js/index.js"></script>
+
+</head>
+<body>
+	<div id = "topBar">
+		<h2 class = "head">
+			Lacross
+		</h2>
+	</div>
+	<div id="navBar">
+   <ul>
+    <li class = "navLink"><a href = "index.html" class = "topLink active">Getting Started</a></li>
+    <li class = "navLink"><a href = "a.html" class = "topLink">Schedule A</a></li>
+    <li class = "navLink"><a href = "b.html" class = "topLink">Schedule B</a></li>
+    <li class = "navLink"><a href = "c.html" class = "topLink">Schedule C</a></li>
+    <li class = "navLink"><a href = "confirm.html" class = "topLink">Confirmation</a></li>
+  </ul>
+</div>
+<div id = "body">
+  <p class= "title">Get Started!</p>
+  <p class = "subTitle">Dunk some players in the database</p>
+  <form action="update.php" method="get">
+  <table>
+
+<!--Player ID-->
+    <tr>
+      <th>
+        Player Identification Code
+      </th>
+      <td>
+        <input type="number" name="id" required="required">
+      </td>
+    </tr>
+
+<!--Player Name-->
+    <tr>
+      <th>
+        Player Name
+      </th>
+      <td>
+        <input type="text" name="name">
+      </td>
+    </tr>
+
+<!--Player Jersey Number-->
+    <tr>
+      <th>
+        Jersey#
+      </th>
+      <td>
+        <input type="number" name="jersey">
+      </td>
+    </tr>
+
+<!--Salary of the player who is even reading this?-->
+    <tr>
+      <th>
+        Salary
+      </th>
+      <td>
+        <input type="number" name="salary">
+      </td>
+    </tr>
+
+<!--Do we really even have to track this?-->
+    <tr>
+      <th>
+        Injury Status
+      </th>
+      <td>
+        <input type="checkbox" name="injured" value="injured">
+      </td>
+    </tr>
+
+<!--Where is the Top/Bottom role? Dom/Sub? Also feel free to add more, whoever is reading this-->
+    <tr>
+      <th>
+        Position
+      </th>
+      <td>
+        <select id = "position">
+          <option value = "pointGuard">Point Guard</option>
+          <option value = "shootingGuard">Shooting Guard</option>
+          <option value = "smallForward">Small Forward</option>
+          <option value = "powerForward">Power Forward</option>
+	  <option value = "center">Center</option>
+	  <option value = "swingman">Ya boi a Swingman</option>
+        </select>
+      </td>
+    </tr>
+
+<!--Coach ID-->
+    <tr>
+      <th>
+        Coach ID
+      </th>
+      <td>
+        <input type = "number" name = "coachID">
+      </td>
+    </tr>
+
+<!--Team ID-->
+    <tr>
+      <th>
+        Team ID
+      </th>
+      <td>
+        <input type = "number" name = "teamID">
+      </td>
+    </tr>
+
+<!--Submit Button that I forgot to put in-->
+    <tr>
+      <th>
+        DUNK'EM
+      </th>
+      <td>
+        <input type = "image" src="dunk.png" border="0" alt="Submit">
+      </td>
+  </table>
+</form>
+
+
+</div>
+<div id = "bottomBar">
+  <ul>
+   <li class = "footerLinks"><a href = "http://www.zillionforms.com/2005/I89424.PDF" class = "moreInfo" target="_blank">about</a></li>
+   <li class = "footerLinks"><a href = "http://www.wataugacounty.org/App_Pages/Dept/Tax/home.aspx" class = "moreInfo" target="_blank">watauga county</a></li>
+   <li class = "footerLinks"><a href = "https://www.irs.gov/" class = "moreInfo" target="_blank">irs</a></li>
+   <li class = "footerLinks"><a href = "https://www.dor.state.nc.us/" class = "moreInfo" target="_blank">nc dor</a></li>
+ </ul>
+
+ <ul>
+   <li>
+     &nbsp;
+   </li>
+ </ul>
+ <ul>
+
+  <li>
+    <a href = "https://github.com/Nivekhu/ClientSide-Marathon" target="_blank"><i class="fa fa-github" style="font-size:36px"></i></a>
+  </li>
+</ul>
+</div>
+</body>
+</html>
