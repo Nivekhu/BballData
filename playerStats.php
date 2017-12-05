@@ -5,22 +5,26 @@
       	include("connection.php");
 	
 	$id = $_GET["id"];
-	$fname = $_GET["fname"];
-	$lname = $_GET["lname"];
+	$name = $_GET["name"];
+	$jersey = $_GET["jersey"];
 	$salary = $_GET["salary"];
 	$injury = $_GET["injured"];
 	$position = $_GET["position"];
+	$coachid = $_GET["coachID"];
+	$teamid = $_GET["teamID"];
 
 	if($injury == ""){
 		$injury = 0;	
 	}
 
 	$sql = "INSERT INTO Pplayers values (".$id.",
-					     '".$fname."',
-					     '".$lname."',
+					     '".$name."',
+				              ".$jersey.",
 					      ".$salary.",
 					      ".$injury.",
-					      '".$position."')";
+					      '".$position."',
+					      ".$coachid.",
+					      ".$teamid.")";
 
 	if ($mysqli_conn->query($sql) === TRUE) {
     		echo "New record created successfully";

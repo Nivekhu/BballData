@@ -28,8 +28,8 @@
 	</div>
 	<div id="navBar">
    <ul>
-    <li class = "navLink"><a href = "index.html" class = "topLink active">Insert Players</a></li>
-    <li class = "navLink"><a href = "playerStat.html" class = "topLink">Add Player Stats</a></li>
+    <li class = "navLink"><a href = "index.html" class = "topLink">Insert Players</a></li>
+    <li class = "navLink"><a href = "playerStat.html" class = "topLink active">Add Player Stats</a></li>
     <li class = "navLink"><a href = "b.html" class = "topLink">Schedule B</a></li>
     <li class = "navLink"><a href = "c.html" class = "topLink">Schedule C</a></li>
     <li class = "navLink"><a href = "confirm.html" class = "topLink">Confirmation</a></li>
@@ -55,19 +55,21 @@
 <!--Player Name-->
     <tr>
       <th>
-        Player Name (first)
+        Player Name
       </th>
       <td>
-        <input type="text" name="fname">
+        <input type="text" name="name">
       </td>
     </tr>
+
+<!--Player Jersey Number-->
     <tr>
-	<th>
-        	Player Name (last)
-      	</th>
-        <td>
-		<input type="text" name="lname">
-       	</td>
+      <th>
+        Jersey#
+      </th>
+      <td>
+        <input type="number" name="jersey">
+      </td>
     </tr>
 
 <!--Salary of the player who is even reading this?-->
@@ -97,6 +99,26 @@
       </th>
       <td>
         <input type = "text" name = "position">
+      </td>
+    </tr>
+
+<!--Coach ID-->
+    <tr>
+      <th>
+        Coach ID
+      </th>
+      <td>
+        <input type = "number" name = "coachID">
+      </td>
+    </tr>
+
+<!--Team ID-->
+    <tr>
+      <th>
+        Team ID
+      </th>
+      <td>
+        <input type = "number" name = "teamID">
       </td>
     </tr>
 
