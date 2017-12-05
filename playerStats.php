@@ -80,5 +80,21 @@
 INCOMPLETE:
 Sort by: <a href="sort.php?sort=student_name">Names</a> OR <a href="sort.php?sort=grade">Grades</a>
 </div>
+<div id = "bottomBar">
+  <ul>
+</ul>
+
+ <ul>
+   <li>
+     &nbsp;
+   </li>
+ </ul>
+ <ul>
+
+  <li>
+    <a href = "https://github.com/Nivekhu/BballData" target="_blank"><i class="fa fa-github" style="font-size:36px"></i></a>
+  </li>
+</ul>
+</div>
 </body>
 </html>
