@@ -21,7 +21,7 @@
 
 </head>
 <body>
-	<div id = "topBar">
+<div id = "topBar">
 		<h2 class = "head">
 			Lacross
 		</h2>
@@ -39,10 +39,15 @@
   <p class= "title">Check out the players</p>
   <p class = "subTitle">Peep what your database of players looks like</p>
 
-  <form action="update.php" method="get">
+  <form action="viewDB.php" method="get">
 	<tr>
-		<td><input type = "image" src="dunk.png" border="0" alt="Submit"></td>
-		<td><input type = "image" src="stat.png" border="0" alt="Submit"></td>
+		<td>
+			<select name="db">
+				<option value="Pplayers">Players</option>
+				<option value="Ppstats">Player Stats</option>
+			</select>
+		</td>
+		<td><input type="image" src="stat.png" border="0" alt="Submit"></td>
 	</tr>
   </form>
 

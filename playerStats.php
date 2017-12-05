@@ -1,5 +1,42 @@
 <html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>
+		Football
+	</title>
+
+	<link rel = "icon" href = "bball.png">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Catamaran:100|Quicksand:300" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
 <body>
+<div id = "topBar">
+		<h2 class = "head">
+			Lacross
+		</h2>
+	</div>
+	<div id="navBar">
+   <ul>
+    <li class = "navLink"><a href = "index.html" class = "topLink">Insert Players</a></li>
+    <li class = "navLink"><a href = "playerStat.html" class = "topLink active">Add Player Stats</a></li>
+    <li class = "navLink"><a href = "b.html" class = "topLink">Schedule B</a></li>
+    <li class = "navLink"><a href = "c.html" class = "topLink">Schedule C</a></li>
+    <li class = "navLink"><a href = "viewDB.html" class = "topLink">View Database</a></li>
+  </ul>
+</div>
+
+<div id ="body">
+<br>
+<br>
+<br>
 
 <?php 
     include("connection.php");
@@ -39,13 +76,9 @@
 ?> 
 
 <br>
-Go back: <br>
-<a href="index.html">Insert Players</a><br>
-<a href="playerStat.html">Insert Player Stats</a><br>
-<a href="viewDB.html">View Database</a><br>
 
 INCOMPLETE:
 Sort by: <a href="sort.php?sort=student_name">Names</a> OR <a href="sort.php?sort=grade">Grades</a>
-
+</div>
 </body>
 </html>
