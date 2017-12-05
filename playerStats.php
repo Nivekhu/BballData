@@ -2,7 +2,7 @@
 <body>
 
 <?php 
-      	include("connection.php");
+    include("connection.php");
 
 	$id = $_GET["id"];
 	$games = $_GET["games"];
@@ -13,7 +13,7 @@
 	$rpg = $_GET["rpg"];
 	$steal = $_GET["steal"];
 	$block = $_GET["block"];
-	$3p = $_GET["3p"];
+	$threep = $_GET["3p"];
 	$fg = $_GET["fg"];
 
 	$sql = "INSERT INTO Ppstats values (".$id.",
@@ -25,7 +25,7 @@
 					      ".$rpg.",
 					      ".$steal.",
 					      ".$block.",
-					      ".$3p.",
+					      ".$threep.",
 					      ".$fg.")";
 
 	if ($mysqli_conn->query($sql) === TRUE) {
