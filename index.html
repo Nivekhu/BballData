@@ -38,6 +38,7 @@
 <div id = "body">
   <p class= "title">Get Started!</p>
   <p class = "subTitle">Dunk some players in the database</p>
+
   <form action="update.php" method="get">
   <table>
 
@@ -87,24 +88,17 @@
         Injury Status
       </th>
       <td>
-        <input type="checkbox" name="injured" value="injured">
+        <input type="checkbox" name="injured" value="1">
       </td>
     </tr>
 
 <!--Where is the Top/Bottom role? Dom/Sub? Also feel free to add more, whoever is reading this-->
-    <tr>
+     <tr>
       <th>
         Position
       </th>
       <td>
-        <select id = "position">
-          <option value = "pointGuard">Point Guard</option>
-          <option value = "shootingGuard">Shooting Guard</option>
-          <option value = "smallForward">Small Forward</option>
-          <option value = "powerForward">Power Forward</option>
-	  <option value = "center">Center</option>
-	  <option value = "swingman">Ya boi a Swingman</option>
-        </select>
+        <input type = "text" name = "position">
       </td>
     </tr>
 
