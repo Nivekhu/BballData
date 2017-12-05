@@ -3,28 +3,30 @@
 
 <?php 
       	include("connection.php");
-	
+
 	$id = $_GET["id"];
-	$name = $_GET["name"];
-	$jersey = $_GET["jersey"];
-	$salary = $_GET["salary"];
-	$injury = $_GET["injured"];
-	$position = $_GET["position"];
-	$coachid = $_GET["coachID"];
-	$teamid = $_GET["teamID"];
+	$games = $_GET["games"];
+	$year = $_GET["year"];
+	$team = $_GET["team"];
+	$ppg = $_GET["ppg"];
+	$apg = $_GET["apg"];
+	$rpg = $_GET["rpg"];
+	$steal = $_GET["steal"];
+	$block = $_GET["block"];
+	$3p = $_GET["3p"];
+	$fg = $_GET["fg"];
 
-	if($injury == ""){
-		$injury = 0;	
-	}
-
-	$sql = "INSERT INTO Pplayers values (".$id.",
-					     '".$name."',
-				              ".$jersey.",
-					      ".$salary.",
-					      ".$injury.",
-					      '".$position."',
-					      ".$coachid.",
-					      ".$teamid.")";
+	$sql = "INSERT INTO Ppstats values (".$id.",
+					     ".$games.",
+				              ".$year.",
+					     '".$team."',
+					      ".$ppg.",
+					      ".$apg.",
+					      ".$rpg.",
+					      ".$steal.",
+					      ".$block.",
+					      ".$3p.",
+					      ".$fg.")";
 
 	if ($mysqli_conn->query($sql) === TRUE) {
     		echo "New record created successfully";

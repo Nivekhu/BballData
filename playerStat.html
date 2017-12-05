@@ -36,10 +36,10 @@
   </ul>
 </div>
 <div id = "body">
-  <p class= "title">Get Started!</p>
-  <p class = "subTitle">Dunk some players in the database</p>
+  <p class= "title">Keep Going!</p>
+  <p class = "subTitle">Track some player stats in the database</p>
 
-  <form action="update.php" method="get">
+  <form action="playerStats.php" method="get">
   <table>
 
 <!--Player ID-->
@@ -72,63 +72,93 @@
       </td>
     </tr>
 
-<!--Salary of the player who is even reading this?-->
+<!--Team-->
     <tr>
       <th>
-        Salary
+        Team
       </th>
       <td>
-        <input type="number" name="salary">
+        <input type="text" name="team">
       </td>
     </tr>
 
-<!--Do we really even have to track this?-->
+<!--Points Per Game-->
     <tr>
       <th>
-        Injury Status
+        Points Per Game (PPG)
       </th>
       <td>
-        <input type="checkbox" name="injured" value="1">
+        <input type="number" name="ppg">
       </td>
     </tr>
 
-<!--Where is the Top/Bottom role? Dom/Sub? Also feel free to add more, whoever is reading this-->
+<!--Assists Per Game-->
      <tr>
       <th>
-        Position
+        Assists Per Game (APG)
       </th>
       <td>
-        <input type = "text" name = "position">
+        <input type = "number" name = "apg">
       </td>
     </tr>
 
-<!--Coach ID-->
+<!--Rebounds Per Game-->
     <tr>
       <th>
-        Coach ID
+        Rebounds Per Game (RPG)
       </th>
       <td>
-        <input type = "number" name = "coachID">
+        <input type = "number" name = "rpg">
       </td>
     </tr>
 
-<!--Team ID-->
+<!--Steals-->
     <tr>
       <th>
-        Team ID
+        Steals Per Game
       </th>
       <td>
-        <input type = "number" name = "teamID">
+        <input type = "number" name = "steal">
+      </td>
+    </tr>
+
+<!--Blocks-->
+    <tr>
+      <th>
+       Blockss Per Game
+      </th>
+      <td>
+        <input type = "number" name = "block">
+      </td>
+    </tr>
+
+<!--Three Point %-->
+    <tr>
+      <th>
+        Three Point %
+      </th>
+      <td>
+        <input type = "number" name = "3p">
+      </td>
+    </tr>
+
+<!--Field Goal %-->
+    <tr>
+      <th>
+        Field Goal %
+      </th>
+      <td>
+        <input type = "number" name = "fg">
       </td>
     </tr>
 
 <!--Submit Button that I forgot to put in-->
     <tr>
       <th>
-        DUNK'EM
+        TRACK'EM
       </th>
       <td>
-        <input type = "image" src="dunk.png" border="0" alt="Submit">
+        <input type = "image" src="stat.png" border="0" alt="Submit">
       </td>
   </table>
 </form>
