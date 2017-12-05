@@ -28,93 +28,28 @@
 	</div>
 	<div id="navBar">
    <ul>
-    <li class = "navLink"><a href = "index.html" class = "topLink active">Insert Players</a></li>
+    <li class = "navLink"><a href = "index.html" class = "topLink">Insert Players</a></li>
     <li class = "navLink"><a href = "playerStat.html" class = "topLink">Add Player Stats</a></li>
     <li class = "navLink"><a href = "b.html" class = "topLink">Schedule B</a></li>
     <li class = "navLink"><a href = "c.html" class = "topLink">Schedule C</a></li>
- 
+    <li class = "navLink"><a href = "viewDB.html" class = "topLink active">View Database</a></li>
   </ul>
 </div>
 <div id = "body">
-  <p class= "title">Get Started!</p>
-  <p class = "subTitle">Dunk some players in the database</p>
+  <p class= "title">Check out the players</p>
+  <p class = "subTitle">Peep what your database of players looks like</p>
 
   <form action="update.php" method="get">
-  <table>
-
-<!--Player ID-->
-    <tr>
-      <th>
-        Player Identification Code
-      </th>
-      <td>
-        <input type="number" name="id" required="required">
-      </td>
-    </tr>
-
-<!--Player Name-->
-    <tr>
-      <th>
-        Player Name (first)
-      </th>
-      <td>
-        <input type="text" name="fname">
-      </td>
-    </tr>
-    <tr>
-	<th>
-        	Player Name (last)
-      	</th>
-        <td>
-		<input type="text" name="lname">
-       	</td>
-    </tr>
-
-<!--Salary of the player who is even reading this?-->
-    <tr>
-      <th>
-        Salary
-      </th>
-      <td>
-        <input type="number" name="salary">
-      </td>
-    </tr>
-
-<!--Do we really even have to track this?-->
-    <tr>
-      <th>
-        Injury Status
-      </th>
-      <td>
-        <input type="checkbox" name="injured" value="1">
-      </td>
-    </tr>
-
-<!--Where is the Top/Bottom role? Dom/Sub? Also feel free to add more, whoever is reading this-->
-     <tr>
-      <th>
-        Position
-      </th>
-      <td>
-        <input type = "text" name = "position">
-      </td>
-    </tr>
-
-<!--Submit Button that I forgot to put in-->
-    <tr>
-      <th>
-        DUNK'EM
-      </th>
-      <td>
-        <input type = "image" src="dunk.png" border="0" alt="Submit">
-      </td>
-  </table>
-</form>
+	<tr>
+		<td><input type = "image" src="dunk.png" border="0" alt="Submit"></td>
+		<td><input type = "image" src="stat.png" border="0" alt="Submit"></td>
+	</tr>
+  </form>
 
 
 </div>
 <div id = "bottomBar">
-  <ul>
+<ul>
 </ul>
 
  <ul>
