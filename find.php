@@ -143,6 +143,39 @@
 		echo "</table>";
 	}
 
+	//Coach
+	if($db == "Pcoach"){
+		$sql = "SELECT * FROM Pcoach WHERE CONCAT
+			(Cid, '_', Fname, '_', Lname, '_', Wins, '_', Losses) LIKE '%".$search."%'";
+		if($remove == 1){
+			$sql = "DELETE FROM Pcoach WHERE CONCAT
+				(Cid, '_', Fname, '_', Lname) LIKE '%".$search."%'";
+		}
+		$result = $mysqli_conn->query($sql);
+		
+		if($result->num_rows == 0){
+			echo "<table> <tr> <td> Item Not Found <td> </tr> </table>";
+		}
+		else if($remove == 1){
+			echo "<table> <tr> <td>  Removed Items <td> </tr> </table>";
+		}
+		else{
+			echo "<table id='currentTable'>";
+			echo "<tr>".
+				 "<th>Id</th> <th>First Name</th> <th>Last Name</th> <th>Wins</th>" .
+				 "<th>Losses</th> <th>Win/Loss%</th>".
+				 " </tr> ";
+			while($row = $result->fetch_assoc()) {
+				echo "<tr>";
+				echo "<td>" .$row["Cid"] ."</td>" ."<td>" .$row["Fname"] ."</td>" .
+				"<td>" .$row["Lname"] ."</td>" . "<td>" .$row["Wins"] ."</td>" .
+				"<td>" .$row["Losses"] ."</td>" ."<td>" .$row["WL"] ."</td>";
+				echo "</tr>";
+			}
+		}
+		echo "</table>";
+	}
+
 	//Testing
 	if ($mysqli_conn->query($sql) !== TRUE) {
     		echo "Error: " . $sql . "<br>" . $mysqli_conn->error;
