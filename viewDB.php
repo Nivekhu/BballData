@@ -27,7 +27,7 @@
    <ul>
     <li class = "navLink"><a href = "index.html" class = "topLink">Insert Players</a></li>
     <li class = "navLink"><a href = "playerStat.html" class = "topLink">Add Player Stats</a></li>
-    <li class = "navLink"><a href = "b.html" class = "topLink">Schedule B</a></li>
+    <li class = "navLink"><a href = "remove.html" class = "topLink">Find/Remove Elements</a></li>
     <li class = "navLink"><a href = "c.html" class = "topLink">Schedule C</a></li>
     <li class = "navLink"><a href = "viewDB.html" class = "topLink active">View Database</a></li>
   </ul>
@@ -55,13 +55,20 @@
 	//End Error Checking
 
 	$result = $mysqli_conn->query($sql);
-	
+	echo "<table id='currentTable'>";
+	echo "<tr>";	
+
 	//Prints Players
 	if ($result->num_rows > 0 && $db == "Pplayers") {
     		while($row = $result->fetch_assoc()) {
-        		echo "id: ".$row["Pid"]." - Name: ".$row["Fname"]." ".$row["Lname"]." <br>";
+			echo "<tr>";
+        		echo "<td> ".$row["Pid"]." </td>".
+			     "<td> ".$row["Fname"]." </td>".
+			     "<td>" .$row["Lname"]."</td>";
+			echo "</tr>";
     		}
 	} 
+
 	//Prints Player stats
 	else if ($result->num_rows > 0 && $db == "Ppstats"){
 		while($row = $result->fetch_assoc()) {
@@ -72,7 +79,7 @@
     		echo "0 results";
 	}
 
-	
+	echo "</table>";
 	$mysqli_conn->close();
 ?> 
 

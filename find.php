@@ -40,30 +40,9 @@
 
 <?php 
     include("connection.php");
+	$db = $_GET["db"];
+	$
 
-	$id = $_GET["id"];
-	$games = $_GET["games"];
-	$year = $_GET["year"];
-	$team = $_GET["team"];
-	$ppg = $_GET["ppg"];
-	$apg = $_GET["apg"];
-	$rpg = $_GET["rpg"];
-	$steal = $_GET["steal"];
-	$block = $_GET["block"];
-	$threep = $_GET["3p"];
-	$fg = $_GET["fg"];
-
-	$sql = "INSERT INTO Ppstats values (".$id.",
-					     ".$games.",
-				              ".$year.",
-					     '".$team."',
-					      ".$ppg.",
-					      ".$apg.",
-					      ".$rpg.",
-					      ".$steal.",
-					      ".$block.",
-					      ".$threep.",
-					      ".$fg.")";
 
 	if ($mysqli_conn->query($sql) === TRUE) {
     		echo "New record created successfully";

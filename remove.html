@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,7 +19,7 @@
 
 </head>
 <body>
-<div id = "topBar">
+	<div id = "topBar">
 		<h2 class = "head">
 			Lacross
 		</h2>
@@ -30,26 +28,51 @@
    <ul>
     <li class = "navLink"><a href = "index.html" class = "topLink">Insert Players</a></li>
     <li class = "navLink"><a href = "playerStat.html" class = "topLink">Add Player Stats</a></li>
-    <li class = "navLink"><a href = "remove.html" class = "topLink">Find/Remove Elements</a></li>
+    <li class = "navLink"><a href = "remove.html" class = "topLink active">Find/Remove Elements</a></li>
     <li class = "navLink"><a href = "c.html" class = "topLink">Schedule C</a></li>
-    <li class = "navLink"><a href = "viewDB.html" class = "topLink active">View Database</a></li>
+    <li class = "navLink"><a href = "viewDB.html" class = "topLink">Confirmation</a></li>
   </ul>
 </div>
 <div id = "body">
-  <p class= "title">Check out the players</p>
-  <p class = "subTitle">Peep what your database of players looks like</p>
+  <p class= "title">Don't like something in the database?</p>
+  <p class = "subTitle">Eliminate it!</p>
 
   <table>
-  <form action="viewDB.php" method="get">
+  <form action="find.php" method="get">
 	<tr>
+		<td>Select Database to Search</td>
 		<td>
 			<select name="db">
 				<option value="Pplayers">Players</option>
 				<option value="Ppstats">Player Stats</option>
 			</select>
 		</td>
-		<td><input type="image" src="stat.png" border="0" alt="Submit"></td>
 	</tr>
+	<tr>
+		<td>
+			Enter Search Term
+		</td>
+		<td>
+			<input type=text name="search_term">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Remove
+		</td>
+		<td>
+			<input type="checkbox" name="remove" value="1">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Search
+		</td>
+		<td>
+			<input type="submit" value="search">
+		</td>
+	</tr>
+
   </form>
   </table>
 
