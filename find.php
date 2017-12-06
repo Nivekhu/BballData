@@ -26,8 +26,8 @@
 	<div id="navBar">
    <ul>
     <li class = "navLink"><a href = "index.html" class = "topLink">Insert Players</a></li>
-    <li class = "navLink"><a href = "playerStat.html" class = "topLink active">Add Player Stats</a></li>
-    <li class = "navLink"><a href = "remove.html" class = "topLink">Find/Remove Elements</a></li>
+    <li class = "navLink"><a href = "playerStat.html" class = "topLink">Add Player Stats</a></li>
+    <li class = "navLink"><a href = "remove.html" class = "topLink active">Find/Remove Elements</a></li>
     <li class = "navLink"><a href = "c.html" class = "topLink">Schedule C</a></li>
     <li class = "navLink"><a href = "viewDB.html" class = "topLink">View Database</a></li>
   </ul>
@@ -41,16 +41,50 @@
 <?php 
     include("connection.php");
 	$db = $_GET["db"];
-	$
+	$search = $_GET["search_term"];
+	$remove = $_GET["remove"];
+	
+	if($db == "Pplayers"){
+		$sql = "SELECT * FROM Pplayers WHERE CONCAT
+			(Pid, '_', Fname, '_', Lname, '_', Salary, '_', Position) LIKE '%".$search."%'";
+		if($remove == 1){
+			$sql = "DELETE FROM Pplayers WHERE CONCAT
+				(Pid, '_', Fname, '_', Lname, '_', Salary, '_', Position) LIKE '%".$search."%'";
+		}
+		$result = $mysqli_conn->query($sql);
+		
+		if($result->num_rows < 0){
+			echo "<table> Item Not Found </table>";
+		}
+		else if($remove == 1){
+			echo "<table> Removed ".$result->num_rows." Items </table>";
+		}
+		else{
+			echo "<table id='currentTable'>";
+			echo "<tr>".
+				 "<th>Id</th><th>First Name</th><th>Last Name</th><th>Salary</th>" .
+				 "<th>Position</th>".
+				 " </tr> ";
+			while($row = $result->fetch_assoc()) {
+				echo "<tr>";
+				echo "<td>" .$row["Pid"] ."</td>" ."<td>" .$row["Fname"] ."</td>" .
+				"<td>" .$row["Lname"] ."</td>" . "<td>" .$row["Salary"] ."</td>" .
+				"<td>" .$row["Position"] ."</td>";
+				echo "</tr>";
+			}
+		}
+		echo "</table>";
+	}
+	else if(db == "Ppstats"){
 
-
-	if ($mysqli_conn->query($sql) === TRUE) {
-    		echo "New record created successfully";
-	} 
-	else {
-	    echo "Error: " . $sql . "<br>" . $mysqli_conn->error;
 	}
 	
+
+	//Testing
+	if ($mysqli_conn->query($sql) !== TRUE) {
+    		echo "Error: " . $sql . "<br>" . $mysqli_conn->error;
+	} 
+	//Testing
 	$mysqli_conn->close();
 ?> 
 
