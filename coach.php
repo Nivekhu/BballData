@@ -26,9 +26,9 @@
 	<div id="navBar">
    <ul>
     <li class = "navLink"><a href = "index.html" class = "topLink">Insert Players</a></li>
-    <li class = "navLink"><a href = "playerStat.html" class = "topLink active">Add Player Stats</a></li>
+    <li class = "navLink"><a href = "playerStat.html" class = "topLink">Add Player Stats</a></li>
     <li class = "navLink"><a href = "team.html" class = "topLink">Add Team</a></li>
-    <li class = "navLink"><a href = "coach.html" class = "topLink">Find/Remove Elements</a></li>
+    <li class = "navLink"><a href = "coach.html" class = "topLink active">Find/Remove Elements</a></li>
     <li class = "navLink"><a href = "remove.html" class = "topLink">Find/Remove Elements</a></li>
     <li class = "navLink"><a href = "viewDB.html" class = "topLink">View Database</a></li>
   </ul>
@@ -38,33 +38,28 @@
 <br>
 <br>
 <br>
-
 <?php 
-    include("connection.php");
+      	include("connection.php");
+	
+	$id = $_GET["Cid"];
+	$fname = $_GET["Fname"];
+	$lname = $_GET["Lname"];
+	$wins = $_GET["wins"];
+	$losses = $_GET["losses"];
 
-	$id = $_GET["id"];
-	$games = $_GET["games"];
-	$year = $_GET["year"];
-	$team = $_GET["team"];
-	$ppg = $_GET["ppg"];
-	$apg = $_GET["apg"];
-	$rpg = $_GET["rpg"];
-	$steal = $_GET["steal"];
-	$block = $_GET["block"];
-	$threep = $_GET["3p"];
-	$fg = $_GET["fg"];
+	if($losses == 0 && $wins != 0)
+		$ratio = 100;
+	else if($losses != 0)
+		$ratio = $wins/$losses;
+	else
+		$ratio = 0;
 
-	$sql = "INSERT INTO Ppstats values (".$id.",
-					     ".$games.",
-				              ".$year.",
-					     '".$team."',
-					      ".$ppg.",
-					      ".$apg.",
-					      ".$rpg.",
-					      ".$steal.",
-					      ".$block.",
-					      ".$threep.",
-					      ".$fg.")";
+	$sql = "INSERT INTO Pcoach values (".$id.",
+					     '".$fname."',
+					     '".$lname."',
+					      ".$wins.",
+					      ".$losses.",
+					      ".$ratio.")";
 
 	if ($mysqli_conn->query($sql) === TRUE) {
     		echo "New record created successfully";
@@ -81,8 +76,6 @@
 INCOMPLETE:
 Sort by: <a href="sort.php?sort=student_name">Names</a> OR <a href="sort.php?sort=grade">Grades</a>
 </div>
-
-
 <div id = "bottomBar">
   <ul>
 </ul>

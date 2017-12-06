@@ -25,9 +25,10 @@
 	</div>
 	<div id="navBar">
    <ul>
-    <li class = "navLink"><a href = "index.html" class = "topLink active">Insert Players</a></li>
+     <li class = "navLink"><a href = "index.html" class = "topLink active">Insert Players</a></li>
     <li class = "navLink"><a href = "playerStat.html" class = "topLink">Add Player Stats</a></li>
     <li class = "navLink"><a href = "team.html" class = "topLink">Add Team</a></li>
+    <li class = "navLink"><a href = "coach.html" class = "topLink">Find/Remove Elements</a></li>
     <li class = "navLink"><a href = "remove.html" class = "topLink">Find/Remove Elements</a></li>
     <li class = "navLink"><a href = "viewDB.html" class = "topLink">View Database</a></li>
   </ul>
