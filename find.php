@@ -44,6 +44,7 @@
 	$search = $_GET["search_term"];
 	$remove = $_GET["remove"];
 	
+	//Players
 	if($db == "Pplayers"){
 		$sql = "SELECT * FROM Pplayers WHERE CONCAT
 			(Pid, '_', Fname, '_', Lname, '_', Salary, '_', Position) LIKE '%".$search."%'";
@@ -75,10 +76,12 @@
 		}
 		echo "</table>";
 	}
+
+	//Player Stats
 	else if($db == "Ppstats"){
 		$sql = "SELECT * FROM Ppstats WHERE id = ".$search." ";
 		if($remove == 1){
-			$sql = "DELETE FROM Ppstats WHERE id = ".$search."";
+			$sql = "DELETE FROM Ppstats WHERE id = ".$search." ";
 		}
 		$result = $mysqli_conn->query($sql);
 		
@@ -107,8 +110,37 @@
 			}
 		}
 		echo "</table>";
+	}	
+
+	//Teams
+	else if($db == "Pteam"){
+		$sql = "SELECT * FROM Pteam WHERE CONCAT
+			(Name, '_', City) LIKE '%".$search."%' ";
+		if($remove == 1){
+			"DELETE FROM Pteam WHERE CONCAT
+			(Name, '_', City) LIKE '%".$search."%' ";
+		}
+		$result = $mysqli_conn->query($sql);
+		
+		if($result->num_rows == 0){
+			echo "<table> <tr> <td> Item Not Found <td> </tr> </table>";
+		}
+		else if($remove == 1){
+			echo "<table> <tr> <td>  Removed Items <td> </tr> </table>";
+		}
+		else{
+			echo "<table id='currentTable'>";
+			echo "<tr>".
+				 "<th>Team Name</th> <th>Team City</th>" .
+				 " </tr> ";
+			while($row = $result->fetch_assoc()) {
+				echo "<tr>";
+				echo "<td>" .$row["Name"] ."</td>" ."<td>" .$row["City"] ."</td>";
+				echo "</tr>";
+			}
+		}
+		echo "</table>";
 	}
-	
 
 	//Testing
 	if ($mysqli_conn->query($sql) !== TRUE) {
@@ -119,9 +151,6 @@
 ?> 
 
 <br>
-
-INCOMPLETE:
-Sort by: <a href="sort.php?sort=student_name">Names</a> OR <a href="sort.php?sort=grade">Grades</a>
 </div>
 
 
