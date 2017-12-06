@@ -55,26 +55,63 @@
 	//End Error Checking
 
 	$result = $mysqli_conn->query($sql);
-	echo "<table id='currentTable'>";
-	echo "<tr>";	
+	echo "<table id='currentTable'>";	
 
 	//Prints Players
 	if ($result->num_rows > 0 && $db == "Pplayers") {
-    		while($row = $result->fetch_assoc()) {
+		echo "<tr>".
+		     "<th>ID</th> <th>First Name</th> <th>Last Name</th>" .
+		     "<th>Salary</th> <th>Position</th>" .
+		     "</tr>";
+    		while($row = $result->fetch_assoc()){
 			echo "<tr>";
         		echo "<td> ".$row["Pid"]." </td>".
 			     "<td> ".$row["Fname"]." </td>".
-			     "<td>" .$row["Lname"]."</td>";
+			     "<td>" .$row["Lname"]."</td>".
+			     "<td>" .$row["Salary"]."</td>".
+			     "<td>" .$row["Position"]."</td>";
 			echo "</tr>";
     		}
 	} 
 
 	//Prints Player stats
 	else if ($result->num_rows > 0 && $db == "Ppstats"){
+		echo "<tr>".
+		     "<th>ID</th> <th>Games</th> <th>Year Played</th>" .
+		     "<th>Team</th> <th>PPG</th> <th>APG</th> <th>RPG</th>" .
+		     "<th>Steals</th> <th>Blocks</th> <th>3 Point %</th> <th>Field Goal %</th>".
+		     "</tr>";
 		while($row = $result->fetch_assoc()) {
-        		echo "id: ".$row["id"]." - Games: ".$row["games"]." ".$row["pYear"]." <br>";
+			echo "<tr>";
+			echo "<td> ".$row["id"]." </td>".
+			     "<td> ".$row["games"]." </td>".
+			     "<td> ".$row["pYear"]." </td>".
+			     "<td> ".$row["Team"]." </td>".
+			     "<td> ".$row["ppg"]." </td>".
+			     "<td> ".$row["apg"]." </td>".
+			     "<td> ".$row["rpg"]." </td>".
+			     "<td>" .$row["stl"]."</td>".
+			     "<td> ".$row["blk"]." </td>".
+			     "<td> ".$row["3p"]." </td>".
+			     "<td>" .$row["fg"]."</td>";
+			echo "</tr>";
+
     		}
 	}
+
+	//Prints Teams
+	else if ($result->num_rows > 0 && $db == "Pteam"){
+		echo "<tr>".
+		     "<th>Name</th> <th>City</th>" .
+		     "</tr>";
+    		while($row = $result->fetch_assoc()){
+			echo "<tr>";
+        		echo "<td> ".$row["Name"]." </td>".
+			     "<td> ".$row["City"]." </td>";
+			echo "</tr>";
+    		}
+	}
+
 	else {
     		echo "0 results";
 	}
@@ -84,9 +121,6 @@
 ?> 
 
 <br>
-
-INCOMPLETE:
-Sort by: <a href="sort.php?sort=student_name">Names</a> OR <a href="sort.php?sort=grade">Grades</a>
 </div>
 <div id = "bottomBar">
   <ul>

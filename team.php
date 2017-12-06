@@ -18,12 +18,14 @@
   	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
+
 <div id = "topBar">
-		<h2 class = "head">
-			Lacross
-		</h2>
-	</div>
-	<div id="navBar">
+	<h2 class = "head">
+		Lacross
+	</h2>
+</div>
+
+<div id="navBar">
    <ul>
     <li class = "navLink"><a href = "index.html" class = "topLink">Insert Players</a></li>
     <li class = "navLink"><a href = "playerStat.html" class = "topLink">Add Player Stats</a></li>
