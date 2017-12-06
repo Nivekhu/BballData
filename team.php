@@ -40,23 +40,11 @@
 <?php 
       	include("connection.php");
 	
-	$id = $_GET["id"];
-	$fname = $_GET["fname"];
-	$lname = $_GET["lname"];
-	$salary = $_GET["salary"];
-	$injury = $_GET["injured"];
-	$position = $_GET["position"];
+	$name = $_GET["Tname"];
+	$city = $_GET["Tcity"];
 
-	if($injury == ""){
-		$injury = 0;	
-	}
-
-	$sql = "INSERT INTO Pplayers values (".$id.",
-					     '".$fname."',
-					     '".$lname."',
-					      ".$salary.",
-					      ".$injury.",
-					      '".$position."')";
+	$sql = "INSERT INTO Pteam values ('".$name."',
+					  '".$city."')";
 
 	if ($mysqli_conn->query($sql) === TRUE) {
     		echo "New record created successfully";
@@ -69,9 +57,6 @@
 ?> 
 
 <br>
-
-INCOMPLETE:
-Sort by: <a href="sort.php?sort=student_name">Names</a> OR <a href="sort.php?sort=grade">Grades</a>
 </div>
 <div id = "bottomBar">
   <ul>
