@@ -116,21 +116,20 @@
 	//Prints Team Stats
 	else if ($result->num_rows > 0 && $db == "Ptstats"){
 		echo "<tr>".
-		     "<th>ID</th> <th>Games</th> <th>Year Played</th>" .
-		     "<th>Team</th> <th>PPG</th> <th>APG</th> <th>RPG</th>" .
+		     "<th>Name</th> <th>Games</th> <th>Year Played</th>" .
+		     "<th>PPG</th> <th>APG</th> <th>RPG</th>" .
 		     "<th>Steals</th> <th>Blocks</th> <th>3 Point %</th> <th>Field Goal %</th>".
 		     "</tr>";
 		while($row = $result->fetch_assoc()) {
 			echo "<tr>";
-			echo "<td> ".$row["id"]." </td>".
-			     "<td> ".$row["games"]." </td>".
-			     "<td> ".$row["pYear"]." </td>".
-			     "<td> ".$row["Team"]." </td>".
-			     "<td> ".$row["ppg"]." </td>".
-			     "<td> ".$row["apg"]." </td>".
-			     "<td> ".$row["rpg"]." </td>".
-			     "<td>" .$row["stl"]."</td>".
-			     "<td> ".$row["blk"]." </td>".
+			echo "<td> ".$row["Name"]." </td>".
+			     "<td> ".$row["Games"]." </td>".
+			     "<td> ".$row["Year"]." </td>".
+			     "<td> ".$row["PPG"]." </td>".
+			     "<td> ".$row["APG"]." </td>".
+			     "<td> ".$row["RPG"]." </td>".
+			     "<td>" .$row["Steal"]."</td>".
+			     "<td> ".$row["Block"]." </td>".
 			     "<td> ".$row["3p"]." </td>".
 			     "<td>" .$row["fg"]."</td>";
 			echo "</tr>";
