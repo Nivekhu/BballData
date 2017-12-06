@@ -50,7 +50,7 @@
 	if($losses == 0 && $wins != 0)
 		$ratio = 100;
 	else if($losses != 0)
-		$ratio = ($wins/$losses) * 100;
+		$ratio = ($wins/($wins+$losses)) * 100;
 	else
 		$ratio = 0;
 
@@ -60,21 +60,16 @@
 					      ".$wins.",
 					      ".$losses.",
 					      ".$ratio.")";
-
 	if ($mysqli_conn->query($sql) === TRUE) {
     		echo "New record created successfully";
 	} 
 	else {
 	    echo "Error: " . $sql . "<br>" . $mysqli_conn->error;
 	}
-	
 	$mysqli_conn->close();
 ?> 
 
 <br>
-
-INCOMPLETE:
-Sort by: <a href="sort.php?sort=student_name">Names</a> OR <a href="sort.php?sort=grade">Grades</a>
 </div>
 <div id = "bottomBar">
   <ul>

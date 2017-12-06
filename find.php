@@ -176,11 +176,6 @@
 		echo "</table>";
 	}
 
-	//Testing
-	if ($mysqli_conn->query($sql) !== TRUE) {
-    		echo "Error: " . $sql . "<br>" . $mysqli_conn->error;
-	} 
-	//Testing
 	$mysqli_conn->close();
 ?> 
 

@@ -70,9 +70,6 @@
 ?> 
 
 <br>
-
-INCOMPLETE:
-Sort by: <a href="sort.php?sort=student_name">Names</a> OR <a href="sort.php?sort=grade">Grades</a>
 </div>
 <div id = "bottomBar">
   <ul>
