@@ -53,11 +53,11 @@
 		}
 		$result = $mysqli_conn->query($sql);
 		
-		if($result->num_rows < 0){
-			echo "<table> Item Not Found </table>";
+		if($result->num_rows == 0){
+			echo "<table> <tr> <td> Item Not Found <td> </tr> </table>";
 		}
 		else if($remove == 1){
-			echo "<table> Removed ".$result->num_rows." Items </table>";
+			echo "<table> <tr> <td>  Removed Items <td> </tr> </table>";
 		}
 		else{
 			echo "<table id='currentTable'>";
@@ -75,8 +75,38 @@
 		}
 		echo "</table>";
 	}
-	else if(db == "Ppstats"){
-
+	else if($db == "Ppstats"){
+		$sql = "SELECT * FROM Ppstats WHERE id = ".$search." ";
+		if($remove == 1){
+			$sql = "DELETE FROM Ppstats WHERE id = ".$search."";
+		}
+		$result = $mysqli_conn->query($sql);
+		
+		if($result->num_rows == 0){
+			echo "<table> <tr> <td> Item Not Found <td> </tr> </table>";
+		}
+		else if($remove == 1){
+			echo "<table> <tr> <td>  Removed Items <td> </tr> </table>";
+		}
+		else{
+			echo "<table id='currentTable'>";
+			echo "<tr>".
+				 "<th>Id</th> <th>Games</th> <th>Year</th> <th>Team</th>" .
+				 "<th>PPG</th> <th>APG</th> <th>RPG</th> <th>STL</th>".
+				 "<th>BLK</th> <th>3p%</th> <th>FG%</th>".
+				 " </tr> ";
+			while($row = $result->fetch_assoc()) {
+				echo "<tr>";
+				echo "<td>" .$row["id"] ."</td>" ."<td>" .$row["games"] ."</td>" .
+				"<td>" .$row["pYear"] ."</td>" . "<td>" .$row["Team"] ."</td>" .
+				"<td>" .$row["ppg"] ."</td>" ."<td>" .$row["apg"] ."</td>".
+				"<td>" .$row["rpg"] ."</td>" ."<td>" .$row["stl"] ."</td>".
+				"<td>" .$row["blk"] ."</td>" ."<td>" .$row["3p"] ."</td>".
+				"<td>" .$row["fg"] ."</td>";
+				echo "</tr>";
+			}
+		}
+		echo "</table>";
 	}
 	
 
