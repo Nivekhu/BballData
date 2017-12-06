@@ -143,6 +143,41 @@
 		echo "</table>";
 	}
 
+	//Team Stats
+	else if($db == "Ptstats"){
+		$sql = "SELECT * FROM Ptstats WHERE Name LIKE '%".$search."%' ";
+		if($remove == 1){
+			$sql = "DELETE FROM Ptstats WHERE Name LIKE '%".$search."%' ";
+		}
+		$result = $mysqli_conn->query($sql);
+		
+		if($result->num_rows == 0){
+			echo "<table> <tr> <td> Item Not Found <td> </tr> </table>";
+		}
+		else if($remove == 1){
+			echo "<table> <tr> <td>  Removed Items <td> </tr> </table>";
+		}
+		else{
+			echo "<table id='currentTable'>";
+			echo "<tr>".
+				 "<th>Name</th> <th>Games</th> <th>Year</th>" .
+				 "<th>PPG</th> <th>APG</th> <th>RPG</th> <th>STL</th>".
+				 "<th>BLK</th> <th>3p%</th> <th>FG%</th>".
+				 " </tr> ";
+			while($row = $result->fetch_assoc()) {
+				echo "<tr>";
+				echo "<td>" .$row["Name"] ."</td>" ."<td>" .$row["Games"] ."</td>" .
+				"<td>" .$row["Year"] ."</td>" . "<td>" .$row["PPG"] ."</td>" .
+				"<td>" .$row["APG"] ."</td>".
+				"<td>" .$row["RPG"] ."</td>" ."<td>" .$row["Steal"] ."</td>".
+				"<td>" .$row["Block"] ."</td>" ."<td>" .$row["3p"] ."</td>".
+				"<td>" .$row["fg"] ."</td>";
+				echo "</tr>";
+			}
+		}
+		echo "</table>";
+	}
+
 	//Coach
 	if($db == "Pcoach"){
 		$sql = "SELECT * FROM Pcoach WHERE CONCAT
