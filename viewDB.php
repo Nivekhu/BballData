@@ -28,7 +28,7 @@
     <li class = "navLink"><a href = "index.html" class = "topLink">Insert Players</a></li>
     <li class = "navLink"><a href = "playerStat.html" class = "topLink">Add Player Stats</a></li>
     <li class = "navLink"><a href = "team.html" class = "topLink">Add Team</a></li>
-    <li class = "navLink"><a href = "coach.html" class = "topLink">Find/Remove Elements</a></li>
+    <li class = "navLink"><a href = "coach.html" class = "topLink">Insert Coaches</a></li>
     <li class = "navLink"><a href = "remove.html" class = "topLink">Find/Remove Elements</a></li>
     <li class = "navLink"><a href = "viewDB.html" class = "topLink active">View Database</a></li>
   </ul>
@@ -112,7 +112,26 @@
 			echo "</tr>";
     		}
 	}
+	
 
+	//Prints Coaches
+	if ($result->num_rows > 0 && $db == "Pcoach") {
+		echo "<tr>".
+		     "<th>ID</th> <th>First Name</th> <th>Last Name</th>" .
+		     "<th>Wins</th> <th>Losses</th> <th>Win/Loss%</th>" .
+		     "</tr>";
+    		while($row = $result->fetch_assoc()){
+			echo "<tr>";
+        		echo "<td> ".$row["Cid"]." </td>".
+			     "<td> ".$row["Fname"]." </td>".
+			     "<td>" .$row["Lname"]."</td>".
+			     "<td>" .$row["Wins"]."</td>".
+			     "<td>" .$row["Losses"]."</td>".
+			     "<td>" .$row["WL"]."</td>";
+			echo "</tr>";
+    		}
+	} 
+	
 	else {
     		echo "0 results";
 	}

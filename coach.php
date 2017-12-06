@@ -28,7 +28,7 @@
     <li class = "navLink"><a href = "index.html" class = "topLink">Insert Players</a></li>
     <li class = "navLink"><a href = "playerStat.html" class = "topLink">Add Player Stats</a></li>
     <li class = "navLink"><a href = "team.html" class = "topLink">Add Team</a></li>
-    <li class = "navLink"><a href = "coach.html" class = "topLink active">Find/Remove Elements</a></li>
+    <li class = "navLink"><a href = "coach.html" class = "topLink active">Insert Coaches</a></li>
     <li class = "navLink"><a href = "remove.html" class = "topLink">Find/Remove Elements</a></li>
     <li class = "navLink"><a href = "viewDB.html" class = "topLink">View Database</a></li>
   </ul>
@@ -50,7 +50,7 @@
 	if($losses == 0 && $wins != 0)
 		$ratio = 100;
 	else if($losses != 0)
-		$ratio = $wins/$losses;
+		$ratio = ($wins/$losses) * 100;
 	else
 		$ratio = 0;
 
